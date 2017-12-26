@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>브런치</title>
+<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+<script type="text/javascript">
+	WebFontConfig = {
+	  custom: {
+			families: ['Noto Sans KR'],
+			urls: ['http://fonts.googleapis.com/earlyaccess/notosanskr.css']
+		}
+	};
+	(function(){
+		var wf = document.createElement('script');
+		wf.src = ('http:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
+</script>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-ui-1.11.4.min.js"></script>
+<script src="../js/prefixfree.min.js"></script>
+<script src="../js/modernizr-custom.min.js"></script>
+<!-- css -->
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+<header>
+	<div class="header_wrap">
+		<div class="header_banner_slide">
+			<div class="_slide_center">
+				<div class="_slide">
+					<div class="banner_scrolltop">
+						<div class="box_center">
+							<p>위클리<br>매거진<br>연재중</p>
+							<p>월화수목금토일</p>
+						</div>
+					</div>
+					<div class="banner_scrolldown">
+						작가의 특별한 연재, 위클리 매거진
+					</div>
+				</div>
+				<div class="_slide" style="display:none">
+					<div class="banner_scrolltop">
+						<div class="box_center">
+							브런치북 프로젝트 #5
+							멘토들과 출판사가 선택한 브런치북 수상작 35편
+						</div>
+					</div>
+					<div class="banner_scrolldown">
+						멘토와 출판사가 선택한 수상작 서른다섯편
+					</div>
+				</div>
+			</div>
+			<div class="slide_pagination"></div>
+			<button type="button" class="_btn_close">닫기</button>
+		</div>
+		<div class="header_fix">
+			<h1><a href="https://brunch.co.kr/" target="_blank">brunch site</a></h1>
+			<div class="top_search">
+				<a class="btn_brunch_start" href="#" target="_blank">브런치 시작하기</a>
+				<form action="post">
+					<div class="input_sch_wrap">
+						<input  class="input_sch" type="text" placeholder="검색어를 입력해 주세요">
+					</div>
+					<button class="btn_sch" type="button">검색</button>
+				</form>
+			</div>
+			<nav class="side_bar">
+				<h2 class="hide_txt">메뉴보기</h2>
+				<div class="side_bar_wrap">
+					<div class="nav_top">
+						<p>
+							You can make anything<br>
+							by writing<br>
+							- C.S.Lewis -
+						</p>
+						<button type="button">브런치 시작하기</button>
+					</div>
+					<ul>
+						<li>브런치 홈</li>
+						<li>브런치 나우</li>
+						<li>브런치 책방</li>
+						<li>위클리 매거진</li>
+					</ul>
+					<div class="_btn_wrap">
+						<a href="#" class="banner_pod" target="_self">brunch pod</a>
+						<a href="#" class="btn_find_account" target="_self">계정을 잊어버리셨나요?</a>
+					</div>
+				</div>
+			</nav>
+			<div class="top_menu">
+				<div class="one"></div>
+				<div class="two"></div>
+				<div class="three"></div>
+			</div>
+		</div>
+	</div>
+</header>
+<main>
+	<div class="main_wrap">
+		<p class="main_top_txt">
+			글이 작품이 되는 공간, 브런치<br>
+			브런치에 담긴 아름다운 작품을 감상해 보세요.<br>
+			그리고 다시 꺼내 보세요.<br>
+			서랍 속 간직하고 있는 글과 감성을.
+		</p>
+		<div class="main-top-board">
+			<ul>
+				<li><span class="ico-txt">Notice</span>이제 나도 연재 작가! '브런치 위클리 매거진'에 도전해보세요</li>
+				<li><span class="ico-txt">Notice</span>구글 선정, 올해를 빛낸 소셜 앱 '최우수상' 수상</li>
+				<li><span class="ico-txt">Update</span>브런치 책방에 작가님의 책을 입고해주세요</li>
+			</ul>
+		</div>
+		<div class="main-slideshow">
+			<ul class="slideshow_slides">
+				<li class="slide lg_tile">
+					<a href="#">
+						<p>
+							고든 램지라고<br>
+							다 맛있는 건 아니구나
+						</p>
+						<p>
+							빠르게 회복되는 기대감을 안은 채로 한 입 베어 물었다
+						</p>
+						<p>by 깐 KKan</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							모든 비매너가 집약된<br>
+							그 날의 극장
+						</p>
+						<p>by Love That</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							프랑스 화장실에 있는<br>
+							두 가지
+						</p>
+						<p>by 최두옥</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							"자네가 하는 일은<br>
+							무엇인가?""
+						</p>
+						<p>by 최양현</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							눈 내리는 삿포로의<br>
+							아침을 거닐다
+						</p>
+						<p>by Bongsub Kim</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							유럽식 문어요리는<br>
+							처음이지?
+						</p>
+						<p>by 장준우</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							한 번쯤 살아보고 싶은<br>
+							제주의 마을
+						</p>
+						<p>by 안솔</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							파리에서 머무는 시간
+						</p>
+						<p>차근차근 낯선 도시와 동화되어 간다.<br></p>
+						<p>by Sustain Life</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							영화이지만 지극히<br>
+							현실적인 이야기
+						</p>
+						<p>by 가랑비메이커</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							살면서 가장 많이<br>
+							걷게 되는 길
+						</p>
+						<p>by Hong G</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							마음을 헤집는<br>
+							그런 계절이다
+						</p>
+						<p>by 페리테일</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							예쁜 그림들을<br>
+							좋아합니다
+						</p>
+						<p>예쁘지 않다면 <br>뭐 하러 그림을 그리겠어요?</p>
+						<p>by 애나 메리 로버트슨 모지스</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							헤어짐은 이곳에서<br>
+							일상 같은 것이에요
+						</p>
+						<p>헤어짐이 없는 만남이 있다면/p>
+						<p>by AMARANTH</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							한 주 동안 고생한<br>
+							나를 위한 요리
+						</p>
+						<p>by 한솔</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							이런 나를 보여줘도<br>
+							괜찮은 사람
+						</p>
+						<p>by 자토</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							결국에는 나도<br>
+							그런 자식이었던가
+						</p>
+						<p>우리 다 너무나 염치없으므로</p>
+						<p>by 고수리</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							먼지 쌓인 피아노를<br>
+							다시 열었다
+						</p>
+						<p>by Kim Ji Youn</p>
+					</a>
+				</li>
+				<li class="slide sm_tile">
+					<a href="#">
+						<p>
+							살기 위해 사는 게 아니라<br>
+							사기 위해 산다
+						</p>
+						<p>by 공작소오칠일</p>
+					</a>
+				</li>
+			</ul>
+			<div class="pagination_wrap">
+				<ul class="pagination">
+					<li class="btn_paginate page-number"></li>
+				</ul>
+			</div>
+			<div class="slide-arrow">
+				<div class="btn-next">다음</div>
+				<div class="btn-prev">이전</div>
+			</div>
+		</div>
+		<section class="main-content-box">
+			<h2>화요 매거진</h2>
+			<div class="content-wrap">
+				<ul>
+					<li>몰라서 물어본다</li>
+					<li>글라글라 제주</li>
+					<li>한국교사, 스웨덴 교육을 마주하다</li>
+					<li>방속작가의 수첩</li>
+					<li>모든 요일의 매거진 만나보기</li>
+				</ul>
+			</div>
+		</section>
+		<section class="main-content-box">
+			<h2>브런치 작가</h2>
+			<div class="content-wrap">
+				<article class="box">
+					<h3>그림·일러스트 작가</h3>
+					<ul>
+						<li>
+							<span class="">뽀얀</span>
+							<ul>
+								<li>보기좋은 빛깔의 그림을 그려요. / 홍익대에서 아트웍 수업을 하고 있어요. </li>
+							</ul>
+						</li>
+						<li>
+							<span class="">키만소리</span>
+							<ul>
+								<li><엄마야, 배낭 단디 메라> 저자 지금은 효밥이와 함께 세계여행 중. two_hs@naver</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">쿠컴퍼니</span>
+							<ul>
+								<li>[보기 좋은 회사가 다니기도 힘들다.] 회사 다니는 일개미 조랭이. 걷고 쓰고 찍고 그리</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">지은</span>
+							<ul>
+								<li>잡.다.한 이야기</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">달고나이모</span>
+							<ul>
+								<li>일상 플러스 망상</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">자토</span>
+							<ul>
+								<li>작가 겸 일러스트레이터로 활동 중이며 쓴 책으로는 《서로의 마음을 산책 중》 </li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+				<article class="box">
+					<h3>브런치북 수상 작가</h3>
+					<ul>
+						<li>
+							<span class="">사유</span>
+							<ul>
+								<li>문학을 애정하는 아키비스트_책방오타쿠_매일이 연습 lecto ergo sum_나는 읽는다 </li>
+							</ul>
+						</li>
+						<li>
+							<span class="">티거 Jang</span>
+							<ul>
+								<li><퇴사학교> 대표 저서 <퇴사의 추억>, <퇴사학교> 외 tiger@t-school.kr</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">바닐라로맨스</span>
+							<ul>
+								<li>이별재회지침서 <다시유혹하라>, <사랑을 공부하다.>, <이게연애다>저자. '평범남, 사랑을 공부하다.'운영, 카톡 </li>
+							</ul>
+						</li>
+						<li>
+							<span class="">Kyle Lee</span>
+							<ul>
+								<li>다이렉트콘택트] 인사총괄 이사 / [바이스버사 디자인스튜디오] 자문위원 / [피키캐스트] 에디터 : 인사팀_멍팀 </li>
+							</ul>
+						</li>
+						<li>
+							<span class="">차칸양</span>
+							<ul>
+								<li>&lt;불황을 이기는 월급의 경제학&gt;, &lt;소심야구&gt; &lt;불황의 시대 직장인의 공부*</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">김동진</span>
+							<ul>
+								<li>영화를 보기 위해 글을 쓰고 있습니다. 일을 하기 위해 영화를 보고 있기도 합니다</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+				<article class="box">
+					<h3>경영·스타트업 작가</h3>
+					<ul>
+						<li>
+							<span class="">Young Choi</span>
+							<ul>
+								<li>CEO & Founder @ Paffem (Startup)</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">슬로그업</span>
+							<ul>
+								<li>창업분야 베스트셀러 '스타트업하고 앉아있네'의 저자. 홈·오피스 설치/관리 플랫폼 </li>
+							</ul>
+						</li>
+						<li>
+							<span class="">메튜장</span>
+							<ul>
+								<li>실리콘벨리서 ‘유라임’ 이라는 스타트업 운영중입니다. 자기데이터,풀스택개발,대용</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">신동해</span>
+							<ul>
+								<li>데이트코스 추천 앱 '데이트팝'으로 창업해 3년을 넘겼습니다. 너무 복잡해서 정리</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">홍순성</span>
+							<ul>
+								<li>자료관리문제연구소 소장, <나는 1인기업가다> 저자, sshong@sshong.com h</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">inun</span>
+							<ul>
+								<li>스타트업에 도전한 뒤 실패했던 디자이너입니다. 실패했던 경험과 스타트업과 관</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+				<article class="box">
+					<h3>글쓰기 코치 작가</h3>
+					<ul>
+						<li>
+							<span class="">다이아라일락</span>
+							<ul>
+								<li>이야기를 보고, 느끼고, 생각하고, 분석해서, 가르치거나 씁니다. dialilac@hanmail.</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">이육헌</span>
+							<ul>
+								<li>멋진 공간과 맛있는 음식을 좋아합니다. 본질에 충실한 제품과 서비스, 브랜드에 관</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">복지CEO 조정원</span>
+							<ul>
+								<li>대기업, 금융권에서 실무를 하다 현재 1인기업과 창업을 한다. [IT엔지니어의 투잡, 책</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">지식전달자 정경수</span>
+							<ul>
+								<li>&lt;휴식, 노는 게 아니라 쉬는 것이다&gt;,&lt;일머리 공부머리 똑똑한 머리 만들기&gt;,&lt;생활</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">김주미</span>
+							<ul>
+								<li>과거 방송 구성작가로 일했으며 현재는 신문방송학 박사로 방송글쓰기와 미디어비</li>
+							</ul>
+						</li>
+						<li>
+							<span class="">모순선생</span>
+							<ul>
+								<li>교사가 '되기'위한 교육학 중등임용 교육학논술 강사' 페이스북에서도 모순선생을 만나실 수 있습니다.</li>
+							</ul>
+						</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+		<div class="main-banner">
+			<p>24시간 잠들지 않는<br>브런치 책방이 문을 엽니다.</p>
+			<p>브런치 작가들의 책을 만나보세요</p>
+		</div>
+		<section class="main-content-box">
+			<h2>좋은 글이 모여있는 브런치 매거진</h2>
+			<div class="content-wrap">
+				<div class="box">
+					<h3>영화 다시보기</h3>
+					<ul>
+						<li>by Dirk</li>
+						<li>
+							<ul class="tag">
+								<li>브런치북</li>
+								<li>리뷰</li>
+								<li>영화</li>
+								<li>다시보기</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="table">
+						<h4>table of contents</h4>
+						<ul>
+							<li><a href="#" target="_blank">극와 극의 평가</a></li>
+							<li><a href="#" target="_blank">21세기 가장 위대한 영화 1위</a></li>
+							<li><a href="#" target="_blank">이 신화는 언제 끝날까?</a></li>
+							<li><a href="#" target="_blank">왜 우리나라엔 석유가 안 날까.</a></li>
+							<li><a href="#" target="_blank">All That Jazz~</a></li>
+							<li><a href="#" target="_blank">비운의 명작</a></li>
+							<li><a href="#" target="_blank">나는 말할 수 있다</a></li>
+							<li><a href="#" target="_blank">그대의 용기에 치얼스</a></li>
+						</ul>
+					</div>
+					<div class="preview">
+						<h5>극과 극의 평가</h5>
+						<ul>
+							<li class="writer">dirk</li>
+							<li class="txt_ellipsis_150">얼마 남지 않은 2017년. 남은 기간 목표 중 하나는 폴 토마스 앤더슨의 영화를 전부 보고 리뷰를 쓰는 것이다. &lt;부기 나이트&gt;, <There Will Be Blood>에 이어 세 번째 PTA(폴 토마스 앤더슨의</li>
+						</ul>
+					</div>
+				</div>
+				<div class="box">
+					<h3>멋진 경영과 건강한 리더십</h3>
+					<ul>
+						<li>by 조조탄</li>
+						<li>
+							<ul class="tag">
+								<li>스타트업</li>
+								<li>성장</li>
+								<li>리더십</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="table">
+						<h4>table of contents</h4>
+						<ul>
+							<li><a href="#" target="_blank">[좋은 식당 7] - 리더의 S [A] LAD</a></li>
+							<li><a href="#" target="_blank">[좋은 식당 6] - 리더의 [S] ALAD 1.</a></li>
+							<li><a href="#" target="_blank">[좋은 식당 5] - 리더의 SALAD 0.</a></li>
+							<li><a href="#" target="_blank">[좋은 식당 4] - 망하는 이유..</a></li>
+							<li><a href="#" target="_blank">[좋은 식당 3] - 멋진 CEO 의식!!</a></li>
+							<li><a href="#" target="_blank">[좋은 식당 2] - 핵심가치 파악</a></li>
+							<li><a href="#" target="_blank">[좋은 식당 1] - 손님, 식사 맛있게 하셨습</a></li>
+						</ul>
+					</div>
+					<div class="preview">
+						<h5>[좋은 식당 7] - 리더의 S [A] LAD</h5>
+						<ul>
+							<li class="writer">조조탄</li>
+							<li class="txt_ellipsis_150">A – Action; 행동하고 실천하라 건강한 몸을 만들기 위해서 필요한 것, 또 한 가지는 바로 ‘움직임‘이다. 행동하고 실천하는 것이 필요하다. 다시 말해, 운동하는 방법을 아무리 많이, 정확하고 깊게 알고</li>
+						</ul>
+					</div>
+				</div>
+				<div class="box">
+					<h3>혼잣말</h3>
+					<ul>
+						<li>by 파르헤시아</li>
+						<li>
+							<ul class="tag">
+								<li>에세이</li>
+								<li>일상생각</li>
+								<li>인문사회</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="table">
+						<h4>table of contents</h4>
+						<ul>
+							<li><a href="#" target="_blank">첨밀밀(甜蜜蜜)</a></li>
+							<li><a href="#" target="_blank">백경(Moby Dick, 白鯨)</a></li>
+							<li><a href="#" target="_blank">사물을 보는 눈</a></li>
+							<li><a href="#" target="_blank">개주소</a></li>
+							<li><a href="#" target="_blank">내 안에 짐승이 산다</a></li>
+							<li><a href="#" target="_blank">횡설수설</a></li>
+							<li><a href="#" target="_blank">욕망과 양심</a></li>
+							<li><a href="#" target="_blank">우연과 필연</a></li>
+						</ul>
+					</div>
+					<div class="preview">
+						<h5>첨밀밀(甜蜜蜜)</h5>
+						<ul>
+							<li class="writer">파르헤시아</li>
+							<li class="txt_ellipsis_150">사람은 누구나 여러 개의 가면을 쓰고 살아간다. 가족 구성원, 사회 구성원으로서, 각기 주어진 사회적, 가정적, 혹은 인간적 관계 역할에 따라 적든 많든 여러 개의 가면을 쓰고 살아간다. 사람 사는 곳이 그런 가면들</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="main-content-box">
+			<h2>키워드로 분류된 다양한 글 모음</h2>
+			<div class="content-wrap">
+				<ul>
+					<li>지구한바퀴 세계여행</li>
+					<li>그림·웹툰</li>
+					<li class="new">시사·이슈</li>
+					<li>IT 트렌드</li>
+					<li>사진·촬영</li>
+					<li>취향저격 영화 리뷰</li>
+					<li>오늘은 이런 책</li>
+					<li>뮤직 인사이드</li>
+					<li>글쓰기 코치</li>
+					<li>직장인 현실 조언</li>
+					<li class="new">스타트업 경험담</li>
+					<li>육아 이야기</li>
+					<li>요리·레시피</li>
+					<li>건강·운동</li>
+					<li>멘탈 관리 심리 탐구</li>
+					<li>디자인 스토리</li>
+					<li>문화·예술</li>
+					<li>건축·설계</li>
+					<li>인문학·철학</li>
+					<li>쉽게 읽는 역사</li>
+					<li>우리집 반려동물</li>
+					<li>멋진 캘리그래피</li>
+					<li>사랑·이별</li>
+					<li>감성 에세이</li>
+				</ul>
+			</div>
+		</section>
+		<section class="main-content-box">
+			<h2>브런치의 다양한 글을 만나보세요.</h2>
+			<div class="content-wrap">
+			</div>
+		</section>
+		<section class="main-content-box">
+			<div class="content-wrap">
+				<div class="box"></div>
+				<div class="box"></div>
+
+			</div>
+		</section>
+	</div>
+	<div class="toTop-arrow">위로 올라가기</div>
+</main>
+<footer>
+	<div class="footer-wrap">
+		<p>You can make anything by writing.<br>C.S.Lewis</p>
+		<ul>
+			<li><a href="#" target="_blank">이용약관</a></li>
+			<li><a href="#" target="_blank">개인정보 처리방침</a></li>
+			<li><a href="#" target="_blank">운영정책</a></li>
+			<li><a href="#" target="_blank">고객센터</a></li>
+			<li><a href="#" target="_blank">출간제안</a></li>
+
+		</ul>
+		<p class="copyright">© Kakao Corp.</p>
+	</div>
+</footer>
+</body>
+</html>

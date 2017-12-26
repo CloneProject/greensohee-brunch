@@ -1,0 +1,94 @@
+button {
+	background: 0;
+	border: 0;
+	padding: 0;
+	cursor: pointer
+}
+
+button:focus,
+textarea:focus {
+	outline: 0
+}
+
+header,
+nav,
+main,
+section,
+article,
+aside,
+footer {
+	display: block
+}
+
+ul,
+li {
+	list-style: none
+}
+
+address,
+em {
+	font-style: normal
+}
+
+a {
+	text-decoration: none
+}
+
+body,
+button,
+input,
+textarea {
+	font-family: 'Noto Sans KR', sans-serif;
+	word-break: keep-all
+}
+
+body {
+	font-size: 14px;
+	color: #4c4c4c;
+	cursor: default;
+	-webkit-overflow-scrolling: touch
+}
+
+input {
+	font-size: 16px
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+form,
+fieldset,
+ul,
+li,
+input {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box
+}
+
+img {
+	border: 0 none
+}
+
+a {
+	display: block;
+	color: #4c4c4c
+}
+
+body {
+	font-family: "Noto Sans kr", "Malgun Gothic", sans-serif;
+	font-size: 12px;
+}
+
+.title {
+	font-family: "Nanum Myeongjo", sans-serif
+}
+
+.ico_by {
+	font-family: Georgia, sans-serif
+}
