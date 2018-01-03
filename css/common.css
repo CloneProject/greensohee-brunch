@@ -92,3 +92,8 @@ body {
 .ico_by {
 	font-family: Georgia, sans-serif
 }
+.hide_text{
+	position:absolute;
+	left:-9999px;
+	top:-9999px;
+}
