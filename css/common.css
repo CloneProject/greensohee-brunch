@@ -85,13 +85,6 @@ body {
 	font-size: 12px;
 }
 
-.title {
-	font-family: "Nanum Myeongjo", sans-serif
-}
-
-.ico_by {
-	font-family: Georgia, sans-serif
-}
 .hide_text{
 	position:absolute;
 	left:-9999px;

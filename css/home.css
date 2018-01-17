@@ -91,12 +91,15 @@
 	width:100%;
 	height:480px;
 }
-.header_banner_slide ._slide_center ._slide.type1 .banner_scrolltop{
+.header_banner_slide ._slide_center ._slide.type1{
 	background:url(../img/pc_weekly_open_bg.png) no-repeat center;
 	background-size:cover;
 }
-.header_banner_slide ._slide_center ._slide.type2 .banner_scrolltop{
+.header_banner_slide ._slide_center ._slide.type2{
 	 background:linear-gradient(to right, #6cb5ac, #76b9ec);
+}
+.header_banner_slide ._slide_center ._slide.type2 .banner_scrolltop{
+
 }
 .header_banner_slide ._slide_center ._slide.type1 .box_center .main_t{
 	font-size:50px;
@@ -151,9 +154,9 @@
 	transform:translate(-50%,-50%) rotate(-45deg);
 }
  .header_banner_slide ._slide_center{
- 	width:100%;
- 	height:100%;
- 	position:relative;
+	width:100%;
+	height:100%;
+	position:relative;
  }
 .header_wrap .top_menu{
 	width:27px;
@@ -168,5 +171,70 @@
 	margin:5px auto;
 	background:#4c4c4c;
 	transition-duration:0.3px;
+}
+.header_banner_slide ._slide_pagination{
+	position:absolute;
+	right:220px;
+	top:50%;
+	transform:translateY(-50%);
+}
+.header_banner_slide ._slide_pagination .pagination_bullet{
+	display:block;
+	position:relative;
+	width:4px;
+	height:24px;
+	padding:16px;
+	box-sizing: border-box;
+	opacity:0.5;
+	cursor: pointer
+}
+.header_banner_slide ._slide_pagination .pagination_bullet:before{
+	content:'';
+	width:4px;
+	height:24px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	border-radius:10px;
+	background:#fff
+}
+.header_banner_slide ._slide_pagination .pagination_bullet.active:before{
 
+	height:47px;
+}
+.header_banner_slide ._slide_pagination .pagination_bullet:first-child{
+	margin-bottom:10px;
+}
+.header_banner_slide ._slide_pagination .pagination_bullet.active{
+	width:4px;
+	height:47px;
+	opacity:1
+}
+.header_banner_slide ._slide_pagination.small .pagination_bullet{
+	width:32px;
+	height:12px;
+	padding:0;
+}
+.header_banner_slide ._slide_pagination.small .pagination_bullet:before{
+	width:4px;
+	height:4px;
+	border-radius:50%
+}
+.header_banner_slide ._slide_pagination.small .pagination_bullet:first-child{
+	margin-bottom:2px;
+}
+.header_banner_slide ._slide_center ._slide .banner_scrolldown{
+	height:60px;
+	font-size:20px;
+	text-align:center;
+	line-height: 60px;
+	font-family: 'Jeju Myeongjo', serif;
+	color:#fff;
+}
+.header_banner_slide ._slide_center ._slide.type1 .banner_scrolldown .color{
+ 	color:#f492a5;
+}
+.header_banner_slide ._slide_center ._slide.type2 .banner_scrolldown .color{
+ 	color:#f6dc44;
 }
