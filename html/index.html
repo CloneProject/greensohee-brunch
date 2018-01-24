@@ -30,53 +30,75 @@
 <link rel="stylesheet" href="../css/common.css">
 <link rel="stylesheet" href="../css/home.css">
 <script >
-	$(function(){
-		$(".banner_scrolldown").hide();
-		$("#btnHeaderTopSlide").click(function(){
-			$(".banner_scrolltop").hide();
-			$("._btn_close").hide();
-			$(".header_banner_slide ._slide_pagination").addClass("btn_small");
-			$(".header_banner_slide ._slide_pagination").removeClass("btn_big");
-			$(".header_banner_slide ._slide.type1 .banner_scrolldown").show();
-			$(".header_banner_slide ._slide.type2 .banner_scrolldown").hide();
-			$(".header_banner_slide").animate({
-				height:'60px'
-			},'fast','linear');
-			$(".header_banner_slide ._slide_pagination .pagination_bullet.page1").addClass("active");
-			$(".header_banner_slide ._slide_pagination .pagination_bullet.page2").removeClass("active");
-
-
-		});
-		var slideClick = $(".header_banner_slide .btn_big .pagination_bullet");
-		var slideSmallClick = $(".header_banner_slide .btn_small .pagination_bullet");
-		slideClick.on("click",function(){
-			console.log("on");
-			$(" .banner_scrolldown").hide();
-			if($(this).hasClass("page1")){
-				$(this).addClass("active");
-				$(this).siblings().removeClass("active");
-
-				$(".header_banner_slide ._slide.type1 .banner_scrolltop").show();
-				$(".header_banner_slide ._slide.type2 .banner_scrolltop").hide();
-			}else{
-				$(this).addClass("active");
-				$(this).siblings().removeClass("active");
-				$(".header_banner_slide ._slide.type1 .banner_scrolltop").hide();
-				$(".header_banner_slide ._slide.type2 .banner_scrolltop").show();
-			}
-		});
-		slideSmallClick.on("click",function(){
-
-
-		});
-
-
-
-
-
+$(function(){
+	$(".banner_scrolldown").hide();
+	$("#btnHeaderTopSlide").click(function(){
+		$(".banner_scrolltop").hide();
+		$("._btn_close").hide();
+		$(".header_banner_slide ._slide_pagination").addClass("btn_small");
+		$(".header_banner_slide ._slide_pagination").removeClass("btn_big");
+		$(".header_banner_slide ._slide.type1 .banner_scrolldown").show();
+		$(".header_banner_slide ._slide.type2 .banner_scrolldown").hide();
+		$(".header_banner_slide").animate({
+			height:'60px'
+		},'fast','linear');
+		$(".header_banner_slide ._slide_pagination .pagination_bullet.page1").addClass("active");
+		$(".header_banner_slide ._slide_pagination .pagination_bullet.page2").removeClass("active");
 
 
 	});
+	var slideClick = $(".header_banner_slide .pagination_bullet");
+
+	$('.header_banner_slide .pagination_bullet').click(function() {
+		if ($($('.pagination_bullet').parent()).hasClass('btn_big')) {
+			if ($(this).hasClass('page1')) {
+				$(this).addClass('active');
+				$(this).siblings().removeClass('active');
+				$('.header_banner_slide ._slide.type1 .banner_scrolltop').show();
+				$('.header_banner_slide ._slide.type2 .banner_scrolltop').hide();
+			} else {
+				$(this).addClass('active');
+				$(this).siblings().removeClass('active');
+				$('.header_banner_slide ._slide.type1 .banner_scrolltop').hide();
+				$('.header_banner_slide ._slide.type2 .banner_scrolltop').show();
+			}
+		} else {
+			$(".banner_scrolltop").hide();
+			if ($(this).hasClass('page1')) {
+				$(this).addClass('active');
+				$(this).siblings().removeClass('active');
+				$('.header_banner_slide ._slide.type1 .banner_scrolldown').show();
+				$('.header_banner_slide ._slide.type2 .banner_scrolldown').hide();
+			} else {
+				$(this).addClass('active');
+				$(this).siblings().removeClass('active');
+				$('.header_banner_slide ._slide.type1 .banner_scrolldown').hide();
+				$('.header_banner_slide ._slide.type2 .banner_scrolldown').show();
+			}
+		}
+	});
+
+	// $('.top_search .btn_sch').click(function(){
+	// 	$(this).addClass("active");
+	// 	$(this).siblings(".input_sch_wrap").show();
+
+	// });
+
+	$('.top_search .btn_sch').click(function(){
+		$(this).addClass("active");
+		$(this).siblings(".input_sch_wrap").show();
+		$(this).siblings(".input_sch_wrap").animate({
+			width:"206px"
+		},300);
+		return false;
+	});
+
+
+
+
+
+
+});
 </script>
 </head>
 <body>
@@ -124,7 +146,7 @@
 					<button class="btn_sch" type="button">검색</button>
 				</form>
 			</div>
-			<nav class="side_bar">
+			<nav class="side_bar" style="display: none">
 				<h2 class="hide_txt">메뉴보기</h2>
 				<div class="side_bar_wrap">
 					<div class="nav_top">
@@ -157,34 +179,34 @@
 </header>
 <main>
 	<div class="main_wrap">
-		<p class="main_top_txt">
-			글이 작품이 되는 공간, 브런치<br>
-			브런치에 담긴 아름다운 작품을 감상해 보세요.<br>
-			그리고 다시 꺼내 보세요.<br>
-			서랍 속 간직하고 있는 글과 감성을.
-		</p>
-		<div class="main-top-board">
-			<ul>
-				<li><span class="ico-txt">Notice</span>이제 나도 연재 작가! '브런치 위클리 매거진'에 도전해보세요</li>
-				<li><span class="ico-txt">Notice</span>구글 선정, 올해를 빛낸 소셜 앱 '최우수상' 수상</li>
-				<li><span class="ico-txt">Update</span>브런치 책방에 작가님의 책을 입고해주세요</li>
-			</ul>
+		<div class="main_top">
+			<p class="main_top_txt">
+				<em class="txt_tit">글이 작품이 되는 공간, 브런치</em>
+				<span class="txt_sub _color1">브런치에 담긴 아름다운 작품을 감상해 보세요.</span>
+				<span class="txt_sub _color2">그리고 다시 꺼내 보세요.</span>
+				<span class="txt_sub _color3">서랍 속 간직하고 있는 글과 감성을.</span>
+			</p>
+			<div class="main_top_board">
+				<ul>
+					<li><span class="ico_txt">Notice</span>이제 나도 연재 작가! '브런치 위클리 매거진'에 도전해보세요</li>
+					<li><span class="ico_txt">Notice</span>구글 선정, 올해를 빛낸 소셜 앱 '최우수상' 수상</li>
+					<li><span class="ico_txt">Update</span>브런치 책방에 작가님의 책을 입고해주세요</li>
+				</ul>
+			</div>
 		</div>
-		<div class="main-slideshow">
+		<div class="main_slideshow">
 			<ul class="slideshow_slides">
-				<li class="slide lg_tile">
-					<a href="#">
-						<p>
-							고든 램지라고<br>
-							다 맛있는 건 아니구나
-						</p>
-						<p>
-							빠르게 회복되는 기대감을 안은 채로 한 입 베어 물었다
-						</p>
-						<p>by 깐 KKan</p>
-					</a>
-				</li>
 				<li class="slide sm_tile">
+					<a href="#">
+						<div class="cotents_center">
+							<p class="contents_txt">
+								영화는 온통 연극적인<br>
+								장치로 가득하다.
+							</p>
+							<p class="contents_writer">by 깐 KKan</p>
+						</div>
+					</a>
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							모든 비매너가 집약된<br>
@@ -192,8 +214,7 @@
 						</p>
 						<p>by Love That</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							프랑스 화장실에 있는<br>
@@ -201,8 +222,7 @@
 						</p>
 						<p>by 최두옥</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							"자네가 하는 일은<br>
@@ -210,8 +230,7 @@
 						</p>
 						<p>by 최양현</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							눈 내리는 삿포로의<br>
@@ -219,8 +238,7 @@
 						</p>
 						<p>by Bongsub Kim</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							유럽식 문어요리는<br>
@@ -228,8 +246,7 @@
 						</p>
 						<p>by 장준우</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							한 번쯤 살아보고 싶은<br>
@@ -237,8 +254,7 @@
 						</p>
 						<p>by 안솔</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							파리에서 머무는 시간
@@ -246,8 +262,7 @@
 						<p>차근차근 낯선 도시와 동화되어 간다.<br></p>
 						<p>by Sustain Life</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							영화이지만 지극히<br>
@@ -255,8 +270,7 @@
 						</p>
 						<p>by 가랑비메이커</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							살면서 가장 많이<br>
@@ -264,8 +278,7 @@
 						</p>
 						<p>by Hong G</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							마음을 헤집는<br>
@@ -273,8 +286,7 @@
 						</p>
 						<p>by 페리테일</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							예쁜 그림들을<br>
@@ -283,8 +295,7 @@
 						<p>예쁘지 않다면 <br>뭐 하러 그림을 그리겠어요?</p>
 						<p>by 애나 메리 로버트슨 모지스</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							헤어짐은 이곳에서<br>
@@ -302,8 +313,7 @@
 						</p>
 						<p>by 한솔</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							이런 나를 보여줘도<br>
@@ -311,8 +321,7 @@
 						</p>
 						<p>by 자토</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							결국에는 나도<br>
@@ -321,8 +330,7 @@
 						<p>우리 다 너무나 염치없으므로</p>
 						<p>by 고수리</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							먼지 쌓인 피아노를<br>
@@ -330,8 +338,7 @@
 						</p>
 						<p>by Kim Ji Youn</p>
 					</a>
-				</li>
-				<li class="slide sm_tile">
+				</li><li class="slide sm_tile">
 					<a href="#">
 						<p>
 							살기 위해 사는 게 아니라<br>
