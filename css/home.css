@@ -211,17 +211,17 @@
 	height:47px;
 	opacity:1
 }
-.header_banner_slide ._slide_pagination.small .pagination_bullet{
+.header_banner_slide ._slide_pagination.btn_small .pagination_bullet{
 	width:32px;
 	height:12px;
 	padding:0;
 }
-.header_banner_slide ._slide_pagination.small .pagination_bullet:before{
+.header_banner_slide ._slide_pagination.btn_small .pagination_bullet:before{
 	width:4px;
 	height:4px;
 	border-radius:50%
 }
-.header_banner_slide ._slide_pagination.small .pagination_bullet:first-child{
+.header_banner_slide ._slide_pagination.btn_small .pagination_bullet:first-child{
 	margin-bottom:2px;
 }
 .header_banner_slide ._slide_center ._slide .banner_scrolldown{

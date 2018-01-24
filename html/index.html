@@ -31,56 +31,49 @@
 <link rel="stylesheet" href="../css/home.css">
 <script >
 	$(function(){
-		var slideClick = $(".header_banner_slide ._slide_pagination .pagination_bullet");
-		var slideSmallClick = $(".header_banner_slide ._slide_pagination.small .pagination_bullet");
-		slideClick.on("click",function(){
-			if($(this).hasClass("active")){
-				$(this).removeClass("active");
-				$(this).siblings().addClass("active");
-			}else{
-				$(this).addClass("active");
-				$(this).siblings().removeClass("active");
-			}
-			if($(this).hasClass("page1")){
-				$(".header_banner_slide ._slide.type1 .banner_scrolltop").show();
-				$(".header_banner_slide ._slide.type2 .banner_scrolltop").hide();
-			}else{
-				$(".header_banner_slide ._slide.type1 .banner_scrolltop").hide();
-				$(".header_banner_slide ._slide.type2 .banner_scrolltop").show();
-			}
-		});
-		// slideSmallClick.on("click",function(){
-		// 	if($(this).hasClass("page1")){
-		// 		$(".header_banner_slide ._slide.type1").animate({
-		// 			top:0
-		// 		},'fast','linear');
-		// 		$(".header_banner_slide ._slide.type2").animate({
-		// 			top:'60px'
-		// 		},'fast','linear');
-		// 	}else{
-		// 		$(".header_banner_slide ._slide.type1 .banner_scrolldown").hide();
-		// 		$(".header_banner_slide ._slide.type2 .banner_scrolldown").slideDown();
-		// 	}
-		// });
-
-		// $(".header_banner_slide ._slide_pagination .pagination_bulle.page1").click(function(){
-		// 	$(".header_banner_slide ._slide.type1").show();
-		// 	$(".header_banner_slide ._slide.type2").hide();
-		// });
-		// $(".header_banner_slide ._slide_pagination .pagination_bullet.page2)").click(function(){
-		// 	$(".header_banner_slide ._slide.type1").hide();
-		// 	$(".header_banner_slide ._slide.type2").show();
-		// });
+		$(".banner_scrolldown").hide();
 		$("#btnHeaderTopSlide").click(function(){
 			$(".banner_scrolltop").hide();
 			$("._btn_close").hide();
-			$(".header_banner_slide ._slide_pagination").addClass("small");
+			$(".header_banner_slide ._slide_pagination").addClass("btn_small");
+			$(".header_banner_slide ._slide_pagination").removeClass("btn_big");
 			$(".header_banner_slide ._slide.type1 .banner_scrolldown").show();
 			$(".header_banner_slide ._slide.type2 .banner_scrolldown").hide();
 			$(".header_banner_slide").animate({
 				height:'60px'
 			},'fast','linear');
+			$(".header_banner_slide ._slide_pagination .pagination_bullet.page1").addClass("active");
+			$(".header_banner_slide ._slide_pagination .pagination_bullet.page2").removeClass("active");
+
+
 		});
+		var slideClick = $(".header_banner_slide .btn_big .pagination_bullet");
+		var slideSmallClick = $(".header_banner_slide .btn_small .pagination_bullet");
+		slideClick.on("click",function(){
+			console.log("on");
+			$(" .banner_scrolldown").hide();
+			if($(this).hasClass("page1")){
+				$(this).addClass("active");
+				$(this).siblings().removeClass("active");
+
+				$(".header_banner_slide ._slide.type1 .banner_scrolltop").show();
+				$(".header_banner_slide ._slide.type2 .banner_scrolltop").hide();
+			}else{
+				$(this).addClass("active");
+				$(this).siblings().removeClass("active");
+				$(".header_banner_slide ._slide.type1 .banner_scrolltop").hide();
+				$(".header_banner_slide ._slide.type2 .banner_scrolltop").show();
+			}
+		});
+		slideSmallClick.on("click",function(){
+
+
+		});
+
+
+
+
+
 
 
 	});
@@ -98,7 +91,7 @@
 							<p class="sub_t">월화수목금토일</p>
 						</div>
 					</div>
-					<div class="banner_scrolldown" style="display:none">
+					<div class="banner_scrolldown">
 						작가의 특별한 연재, <em class="color">위클리 매거진</em>
 					</div>
 				</div>
@@ -109,12 +102,12 @@
 							<p class="hide_text">멘토들과 출판사가 선택한 브런치북 수상작 35편</p>
 						</div>
 					</div>
-					<div class="banner_scrolldown" style="display:none">
+					<div class="banner_scrolldown">
 						멘토와 출판사가 선택한 <em class="color">수상작 서른다섯편</em>
 					</div>
 				</div>
 			</div>
-			<div class="_slide_pagination">
+			<div class="_slide_pagination btn_big">
 				<span class="pagination_bullet active page1"></span>
 				<span class="pagination_bullet page2"></span>
 			</div>
