@@ -92,13 +92,154 @@ $(function(){
 		},300);
 		return false;
 	});
+	$(".slideshow_slides .slide").mouseover(function(){
+		$(this) .find("img").addClass("hover");
+	});
+	$(".slideshow_slides .slide").mouseleave(function(){
+		$(this) .find("img").removeClass("hover");
+	});
+
+
+	$('.main_slideshow').each(function(){
+		var $container = $(this),
+		$slideGroup = $container.find('.slideshow_slides'),
+		$slides = $slideGroup.find('.slide'),
+		$slidenav = $container.find('.slideshow_nav'),
+		$slideindicator = $container.find('.slideshow_indicator'),
+		indicatorHTML = '';
+		var current = 0;
+		var slideListSize = 10;
+		var prev = $slidenav.find('.prev');
+		var next = $slidenav.find('.next');
+		var containWidth = $slideGroup.width();
+		var maxSize = $slides.size();
+
+		// $slides.each(function(i){
+		// 	// $(this).css({left:100*i+'%'});
+		// 	indicatorHTML += '<a href="#">' + (i+1) + '</a>';
+		// });
+		// $slideindicator.html(indicatorHTML);
+		next.on('click', function(){
+			// if(current < maxSize / slideListSize -1) current++;
+			// console.log(current);
+			if(current < maxSize / slideListSize -1) current++;
+			var t1 = containWidth*current*-1;
+			$slideGroup.stop().animate(
+				{left:t1},
+				{duration:400,easing:'easeOutCubic'}
+			);
+
+		});
+		prev.on('click', function(){
+			if(current > 0) current--;
+			console.log(current);
+			var t1 = containWidth*current*-1;
+			$slideGroup.stop().animate({left:t1});
+		});
+	});
+
+	// $('.main_slideshow').each(function(){
+	// 	var $container = $(this),
+	// 	$slideGroup = $container.find('.slideshow_slides'),
+	// 	$slides = $slideGroup.find('.slide'),
+	// 	$slidenav = $container.find('.slideshow_nav'),
+	// 	$slideindicator = $container.find('.slideshow_indicator'),
+	// 	indicatorHTML = '';
+	// 	var current = 0;
+	// 	var slideListSize = 10;
+	// 	var prev = $slidenav.find('.prev');
+	// 	var next = $slidenav.find('.next');
+	// 	var containWidth = $slideGroup.width();
+	// 	var maxSize = $slides.size();
+
+	// 	// $slides.each(function(i){
+	// 	// 	// $(this).css({left:100*i+'%'});
+	// 	// 	indicatorHTML += '<a href="#">' + (i+1) + '</a>';
+	// 	// });
+	// 	// $slideindicator.html(indicatorHTML);
+	// 	next.on('click', function(){
+	// 		if(current < maxSize / slideListSize -1) current++;
+	// 		console.log(current);
+	// 		var t1 = containWidth*current*-1;
+	// 		$slideGroup.stop().animate(
+	// 			{left:t1},
+	// 			{duration:400,easing:'easeOutCubic'}
+	// 			);
+
+	// 	});
+	// 	prev.on('click', function(){
+	// 		if(current > 0) current--;
+	// 		console.log(current);
+	// 		var t1 = containWidth*current*-1;
+	// 		$slideGroup.stop().animate({left:t1});
+	// 	});
+	// });
 
 
 
+	//참고해서 해보자
+	// var ANIM_DURATION = 500;
 
+	// var currentLeft = 0;
 
+	// $(".slideshow_nav .prev").click(function(){
+	// 	if(Math.abs(currentLeft) > 0) {
 
+	// 		var total = $(".slideshow_nav").data("total");
+	// 		var animPx = $(".main_slideshow").outerWidth();
+	// 		if(currentLeft + animPx > 0) {
+
+	// 			if(!$(".slideshow_slides").is(":animated")) {
+	// 				$(".slideshow_slides").animate({"left": 0},ANIM_DURATION,function(){
+	// 					currentLeft = 0;
+	// 				});
+	// 			}
+	// 		} else {
+
+	// 			if(!$(".slideshow_slides").is(":animated")) {
+	// 				$(".slideshow_slides").animate({"left": currentLeft + animPx},ANIM_DURATION,function(){
+	// 					currentLeft += animPx;
+	// 				});
+	// 			}
+	// 		}
+	// 	}
+	// });
+
+	// $(".slideshow_nav .next").click(function(){
+
+	// 	var total = $(".slideshow_nav").data("total");
+	// 	var lgTileWd = $(".main_slideshow .lg_tile").outerWidth();
+	// 	var smTileWd = $(".main_slideshow .sm_tile").outerWidth();
+	// 	var maxWidth =  lgTileWd + (total - 1 ) / 2 * smTileWd;
+	// 	var slideWidth = $(".main_slideshow").outerWidth();
+	// 	var animPx = 0;
+	// 	var animWidth = slideWidth;
+	// 	if(currentLeft == 0) {
+	// 		 animWidth -= lgTileWd;
+	// 	}
+
+	// 	while(animWidth > 0){
+	// 		animWidth -= smTileWd;
+	// 	}
+
+	// 	animPx = -(slideWidth - (animWidth + smTileWd));
+	// 	if(Math.abs(currentLeft + animPx) < maxWidth) {
+
+	// 		if(!$(".slideshow_slides").is(":animated")) {
+	// 			$(".slideshow_slides").animate({"left": currentLeft + animPx},ANIM_DURATION,function(){
+	// 				currentLeft += animPx;
+	// 			});
+	// 		}
+	// 	} else {
+	// 		if(!$(".slideshow_slides").is(":animated")) {
+	// 			$(".slideshow_slides").animate({"left": 0},ANIM_DURATION,function(){
+	// 				currentLeft = 0;
+	// 			});
+	// 		}
+	// 	}
+	// });
 });
+
 </script>
 </head>
 <body>
@@ -198,7 +339,10 @@ $(function(){
 			<ul class="slideshow_slides">
 				<li class="slide sm_tile">
 					<a href="#">
-						<div class="cotents_center">
+						<div class="bg_img_wrap">
+							<img src="../img/slide_img1.jpg" alt="">
+						</div>
+						<div class="contents_center">
 							<p class="contents_txt">
 								영화는 온통 연극적인<br>
 								장치로 가득하다.
@@ -208,157 +352,201 @@ $(function(){
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							모든 비매너가 집약된<br>
-							그 날의 극장
-						</p>
-						<p>by Love That</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								모든 비매너가 집약된<br>
+								그 날의 극장
+							</p>
+							<p class="contents_writer">by Love That</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							프랑스 화장실에 있는<br>
-							두 가지
-						</p>
-						<p>by 최두옥</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								프랑스 화장실에 있는<br>
+								두 가지
+							</p>
+							<p class="contents_writer">by 최두옥</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							"자네가 하는 일은<br>
-							무엇인가?""
-						</p>
-						<p>by 최양현</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								"자네가 하는 일은<br>
+								무엇인가?""
+							</p>
+							<p class="contents_writer">by 최양현</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							눈 내리는 삿포로의<br>
-							아침을 거닐다
-						</p>
-						<p>by Bongsub Kim</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								눈 내리는 삿포로의<br>
+								아침을 거닐다
+							</p>
+							<p class="contents_writer">by Bongsub Kim</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							유럽식 문어요리는<br>
-							처음이지?
-						</p>
-						<p>by 장준우</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								유럽식 문어요리는<br>
+								처음이지?
+							</p>
+							<p class="contents_writer">by 장준우</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							한 번쯤 살아보고 싶은<br>
-							제주의 마을
-						</p>
-						<p>by 안솔</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								한 번쯤 살아보고 싶은<br>
+								제주의 마을
+							</p>
+							<p class="contents_writer">by 안솔</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							파리에서 머무는 시간
-						</p>
-						<p>차근차근 낯선 도시와 동화되어 간다.<br></p>
-						<p>by Sustain Life</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								파리에서 머무는 시간
+							</p>
+							<p>차근차근 낯선 도시와 동화되어 간다.<br></p>
+							<p class="contents_writer">by Sustain Life</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							영화이지만 지극히<br>
-							현실적인 이야기
-						</p>
-						<p>by 가랑비메이커</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								영화이지만 지극히<br>
+								현실적인 이야기
+							</p>
+							<p class="contents_writer">by 가랑비메이커</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							살면서 가장 많이<br>
-							걷게 되는 길
-						</p>
-						<p>by Hong G</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								살면서 가장 많이<br>
+								걷게 되는 길
+							</p>
+							<p class="contents_writer">by Hong G</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							마음을 헤집는<br>
-							그런 계절이다
-						</p>
-						<p>by 페리테일</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								마음을 헤집는<br>
+								그런 계절이다
+							</p>
+							<p class="contents_writer">by 페리테일</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							예쁜 그림들을<br>
-							좋아합니다
-						</p>
-						<p>예쁘지 않다면 <br>뭐 하러 그림을 그리겠어요?</p>
-						<p>by 애나 메리 로버트슨 모지스</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								예쁜 그림들을<br>
+								좋아합니다
+							</p>
+							<p>예쁘지 않다면 <br>뭐 하러 그림을 그리겠어요?</p>
+							<p class="contents_writer">by 애나 메리 로버트슨 모지스</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							헤어짐은 이곳에서<br>
-							일상 같은 것이에요
+						<div class="contents_center">
+							<p class="contents_txt">
+								헤어짐은 이곳에서<br>
+								일상 같은 것이에요
+							</p>
+							<p>헤어짐이 없는 만남이 있다면</p>
+							<p class="contents_writer">by AMARANTH</p>
 						</p>
-						<p>헤어짐이 없는 만남이 있다면/p>
-						<p>by AMARANTH</p>
 					</a>
 				</li>
 				<li class="slide sm_tile">
 					<a href="#">
-						<p>
-							한 주 동안 고생한<br>
-							나를 위한 요리
-						</p>
-						<p>by 한솔</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								한 주 동안 고생한<br>
+								나를 위한 요리
+							</p>
+							<p class="contents_writer">by 한솔</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							이런 나를 보여줘도<br>
-							괜찮은 사람
-						</p>
-						<p>by 자토</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								이런 나를 보여줘도<br>
+								괜찮은 사람
+							</p>
+							<p class="contents_writer">by 자토</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							결국에는 나도<br>
-							그런 자식이었던가
-						</p>
-						<p>우리 다 너무나 염치없으므로</p>
-						<p>by 고수리</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								결국에는 나도<br>
+								그런 자식이었던가
+							</p>
+							<p>우리 다 너무나 염치없으므로</p>
+							<p class="contents_writer">by 고수리</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							먼지 쌓인 피아노를<br>
-							다시 열었다
-						</p>
-						<p>by Kim Ji Youn</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								먼지 쌓인 피아노를<br>
+								다시 열었다
+							</p>
+							<p class="contents_writer">by Kim Ji Youn</p>
+						</div>
 					</a>
 				</li><li class="slide sm_tile">
 					<a href="#">
-						<p>
-							살기 위해 사는 게 아니라<br>
-							사기 위해 산다
-						</p>
-						<p>by 공작소오칠일</p>
+						<div class="contents_center">
+							<p class="contents_txt">
+								살기 위해 사는 게 아니라<br>
+								사기 위해 산다
+							</p>
+							<p class="contents_writer">by 공작소오칠일</p>
+						</div>
 					</a>
 				</li>
 			</ul>
-			<div class="pagination_wrap">
-				<ul class="pagination">
-					<li class="btn_paginate page-number"></li>
-				</ul>
+			<div class="slideshow_indicator pagination_wrap">
+				<!-- <ul class="pagination">
+					<li class="page_num active">01</li>
+					<li class="page_num">02</li>
+					<li class="page_num">03</li>
+					<li class="page_num">04</li>
+					<li class="page_num">05</li>
+					<li class="page_num">06</li>
+					<li class="page_num">07</li>
+					<li class="page_num">08</li>
+					<li class="page_num">09</li>
+					<li class="page_num">10</li>
+				</ul> -->
 			</div>
-			<div class="slide-arrow">
-				<div class="btn-next">다음</div>
-				<div class="btn-prev">이전</div>
+			<div class="slideshow_nav slide_arrow" data-total="">
+				<a href="javascript:;" class="btn prev">이전</a>
+				<a href="javascript:;" class="btn next">다음</a>
+
 			</div>
 		</div>
-		<section class="main-content-box">
+		<!-- <section class="main-content-box">
 			<h2>화요 매거진</h2>
 			<div class="content-wrap">
 				<ul>
@@ -689,13 +877,16 @@ $(function(){
 				<div class="box"></div>
 
 			</div>
-		</section>
+		</section> -->
 	</div>
-	<div class="toTop-arrow">위로 올라가기</div>
+	<div class="toTop_arrow">위로 올라가기</div>
 </main>
 <footer>
-	<div class="footer-wrap">
-		<p>You can make anything by writing.<br>C.S.Lewis</p>
+	<div class="footer_wrap">
+		이 사이트는'브런치 사이트 brunch.co.kr'의 복제 사이트 입니다.<br>
+		학습을 위한 클론 프로젝트의 일부로 만들었습니다.<br>
+		김소희 제작 2017년 12월 18일 - 2018년 2월 24일
+	<!-- 	<p>You can make anything by writing.<br>C.S.Lewis</p>
 		<ul>
 			<li><a href="#" target="_blank">이용약관</a></li>
 			<li><a href="#" target="_blank">개인정보 처리방침</a></li>
@@ -704,7 +895,7 @@ $(function(){
 			<li><a href="#" target="_blank">출간제안</a></li>
 
 		</ul>
-		<p class="copyright">© Kakao Corp.</p>
+		<p class="copyright">© Kakao Corp.</p> -->
 	</div>
 </footer>
 </body>
