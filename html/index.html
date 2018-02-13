@@ -98,6 +98,12 @@ $(function(){
 	$(".slideshow_slides .slide").mouseleave(function(){
 		$(this) .find("img").removeClass("hover");
 	});
+	$(".slideshow_slides .slide2").mouseover(function(){
+		$(this) .find("img").addClass("hover");
+	});
+	$(".slideshow_slides .slide2").mouseleave(function(){
+		$(this) .find("img").removeClass("hover");
+	});
 
 
 	$('.main_slideshow').each(function(){
@@ -122,19 +128,21 @@ $(function(){
 		next.on('click', function(){
 			// if(current < maxSize / slideListSize -1) current++;
 			// console.log(current);
-			if(current < maxSize / slideListSize -1) current++;
-			var t1 = containWidth*current*-1;
+			if(current < 600 -1) current++;
+			// if(current < maxSize / slideListSize -1) current++;
+			// var t1 = containWidth*current*-1;
+			var t1 = 600*current*-1;
 			$slideGroup.stop().animate(
 				{left:t1},
-				{duration:400,easing:'easeOutCubic'}
+				{duration:600,easing:'easeOutCubic'}
 			);
-
 		});
 		prev.on('click', function(){
 			if(current > 0) current--;
 			console.log(current);
-			var t1 = containWidth*current*-1;
-			$slideGroup.stop().animate({left:t1});
+			// var t1 = containWidth*current*-1;
+			var t1 =600*current*+1;
+			$slideGroup.stop().animate({left:-t1});
 		});
 	});
 
@@ -525,6 +533,91 @@ $(function(){
 						</div>
 					</a>
 				</li>
+			</ul>
+			<div class="slideshow_indicator pagination_wrap">
+				<!-- <ul class="pagination">
+					<li class="page_num active">01</li>
+					<li class="page_num">02</li>
+					<li class="page_num">03</li>
+					<li class="page_num">04</li>
+					<li class="page_num">05</li>
+					<li class="page_num">06</li>
+					<li class="page_num">07</li>
+					<li class="page_num">08</li>
+					<li class="page_num">09</li>
+					<li class="page_num">10</li>
+				</ul> -->
+			</div>
+			<div class="slideshow_nav slide_arrow" data-total="">
+				<a href="javascript:;" class="btn prev">이전</a>
+				<a href="javascript:;" class="btn next">다음</a>
+
+			</div>
+		</div>
+
+		<div class="main_slideshow">
+			<ul class="slideshow_slides">
+				<li class="slide_module_A">
+				<!-- 	<div class="box_module_A"> -->
+						<div class="slide2 slide_type1">
+							<a href="#">
+								<div class="bg_img_wrap">
+									<img src="../img/slide_img1.jpg" alt="">
+								</div>
+								<div class="contents_center">
+									<p class="contents_txt">
+										영화는 온통 연극적인<br>
+										장치로 가득하다.
+									</p>
+									<p class="contents_writer">by 깐 KKan</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide2 slide_type2">
+							<a href="#">
+								<div class="bg_img_wrap">
+									<img src="../img/slide_img1.jpg" alt="">
+								</div>
+								<div class="contents_center">
+									<p class="contents_txt">
+										영화는 온통 연극적인<br>
+										장치로 가득하다.
+									</p>
+									<p class="contents_writer">by 깐 KKan</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide2 slide_type3">
+							<a href="#">
+								<div class="bg_img_wrap">
+									<img src="../img/slide_img1.jpg" alt="">
+								</div>
+								<div class="contents_center">
+									<p class="contents_txt">
+										영화는 온통 연극적인<br>
+										장치로 가득하다.
+									</p>
+									<p class="contents_writer">by 깐 KKan</p>
+								</div>
+							</a>
+						</div>
+						<div class="slide2 slide_type4">
+							<a href="#">
+								<div class="bg_img_wrap">
+									<img src="../img/slide_img1.jpg" alt="">
+								</div>
+								<div class="contents_center">
+									<p class="contents_txt">
+										영화는 온통 연극적인<br>
+										장치로 가득하다.
+									</p>
+									<p class="contents_writer">by 깐 KKan</p>
+								</div>
+							</a>
+						</div>
+				<!-- 	</div> -->
+				</li>
+
 			</ul>
 			<div class="slideshow_indicator pagination_wrap">
 				<!-- <ul class="pagination">
